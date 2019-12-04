@@ -1,12 +1,12 @@
 export const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyBuOX38DyDIIvyK_-l9XyyRjKhYq_fIHwY",
-    authDomain: "reviewer-8545b.firebaseapp.com",
-    databaseURL: "https://reviewer-8545b.firebaseio.com",
-    projectId: "reviewer-8545b",
-    storageBucket: "reviewer-8545b.appspot.com",
-    messagingSenderId: "281707185188",
-    appId: "1:281707185188:web:961e4c20dca00f464ec4b1",
-    measurementId: "G-VNFD7R6BKL"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
 };
 
 export const snapshotToArray = snapshot => {
