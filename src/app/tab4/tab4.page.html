@@ -25,10 +25,10 @@
         <app-item [item]="item"></app-item>
     </ion-card>
   </ion-list>
-  <p *ngIf="items && items.length === 0">
+  <p *ngIf="items && items.length === 0 && num === 2">
     No posts.
   </p>
-  <p *ngIf="!items">
+  <p *ngIf="items && num === 0">
     Loading...
   </p>
 
