@@ -13,6 +13,6 @@ export class LoginPage implements OnInit {
   ngOnInit(){}
   
   signIn(){
-    this.router.navigateByUrl('/tab2');
+    this.router.navigate(['/']);
   }
 }
