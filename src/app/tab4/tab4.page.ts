@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 import {FIREBASE_CONFIG, snapshotToArray} from '../config/firebaseconfig';
 
 @Component({
@@ -11,12 +12,19 @@ export class Tab4Page implements OnInit {
 
   items = [];
   ref = firebase.database().ref('posts/')
-  constructor() { 
+  constructor(private router: Router) { 
     this.ref.on('value', res =>{
-      this.items = snapshotToArray(res);
+      this.items = snapshotToArray(res).filter((item)=>{
+        if(item.userId === 'user001'){
+          return item;
+        }
+      });
+      
     })
   }
 
   ngOnInit() {}
-
+  goToNewPost(){
+    this.router.navigateByUrl('/tabs/tab2');
+  }
 }
