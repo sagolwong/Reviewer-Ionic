@@ -10,23 +10,17 @@
   <ion-item>
     <p>Profile</p>
   </ion-item>
-  <div *ngIf="!image_base64">
-    <img class="logo2" src="/assets/img/logo-user.png">
+  <div *ngIf="userAvatar === 'test'">
+      <ion-button [fill]="'clear'" class="button-go" (click)="goToUploadAvatar()"><img class="logo2" src="/assets/img/logo-user.png"/></ion-button>
   </div>
-  <div *ngIf="image_base64">
-    <img class="logo2" [src]="image_base64" />
-    <ion-avatar><img [src]="image_base64" /></ion-avatar>
-    <button ion-button-block (click)="uploadAvatar()">Upload</button>
+  <div *ngIf="userAvatar !== 'test'">
+    <ion-avatar><img [src]="userAvatar" /></ion-avatar>
   </div>
-  <button ion-button-block (click)="openCamera()">Open Camera</button>
-  <button ion-button-block (click)="openGallery()">Open Gallery</button>
-  <img class="logo2" [src]="userAvatar" />
   <ion-item>
     <p>Firstname Surname</p>
   </ion-item>
   <ion-card>
-    <ion-button [fill]="'clear'" class="button-add" (click)="goToNewPost()">New Post<ion-icon name="add"></ion-icon>
-    </ion-button>
+    <ion-button [fill]="'clear'" class="button-add" (click)="goToNewPost()">New Post<ion-icon name="add"></ion-icon></ion-button>
   </ion-card>
   <ion-list *ngIf="items && items.length > 0">
     <ion-card *ngFor="let item of items">

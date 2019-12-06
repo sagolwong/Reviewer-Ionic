@@ -17,7 +17,11 @@ const routes: Routes = [
   {
     path: 'tab',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },  {
+    path: 'uploade-avatar',
+    loadChildren: () => import('./uploade-avatar/uploade-avatar.module').then( m => m.UploadeAvatarPageModule)
   },
+
 ];
 @NgModule({
   imports: [
